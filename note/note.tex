@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{lipsum}
+\usepackage{abstract}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage[square]{natbib}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    anchorcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+}
+
+\begin{document}
+
+\section{Introduction}
+
+Let \(y_{ijsge}\) denote the level of bilateral migration of individuals of
+gender \(g\) and education level \(e\) from country \(i\) to sector \(s\) of
+country \(j\). Let \(x_{ij}\) denote the level of foreign aid flowing from
+country \(i\) to country \(j\).  In it's most general form, our model seeks to
+understand the relationship.
+
+\begin{equation}
+    y_{ij} = f(x_{ij}, Z_{i}, Z_{j}, \delta_{s}, \gamma_{g}, \lambda_{e})
+\end{equation}
+
+The model links two bilateral flows (i.e., foreign aid and migration) and draws
+inspiration form ``gravity'' models of international trade.  A linear
+specification for pooled ordinary least squares with fixed effects is
+
+\begin{equation}
+    y_{ij} = \alpha + \beta x_{ij} + Z_{i} + Z_{j} + \delta_{s} + \gamma_{g} + \lambda_{e}
+\end{equation}
+
+where \(Z_{i}\) are donor fixed effects, \(Z_{j}\) are receiver fixed effects,
+\(\delta_{s}\) are sector fixed effects, \(\gamma_{s}\) are sector fixed effects
+
+\section{Assumptions and Caveats}
+
+\begin{enumerate}
+    \item The relationship between foreign aid and migration is linear.
+    \item Migration flows observed round year 2000 are proportional to flows
+        observed in 2011.  This assumption is a result of the nature of the
+        observed data: migration is observed around year 2000 at the
+        continent-country level and foreign aid is observed annually from 2011
+        to 2020 at the country-country level.
+    \item The bilateral migration data is observed only at the continent to
+        country level.  Therefore we need to assume that the flow of foreign aid
+        from country \(i\) to country \(j\) in continent \(c\) can be directly
+        linked to the flow of migrants from continent \(c\) to country \(i\).
+    \item We make no assumptions on the direction of causality in this
+        specification.
+\end{enumerate}
+
+\section{Results}
+
+Overall, the estimates from our specifications consistently suggest \textbf{a
+negative relationship between foreign aid and bilateral migration flows}.  All
+else being held equal, an increase in the level of foreign aid from country
+\(i\) to country \(j\) is associated with a decrease in the level of bilateral
+migration from country \(i\) to country \(j\).  In our preferred specification,
+increasing foreign aid from country \(i\) to country \(j\) by \$1 million (2011
+USD) is associated with 134 fewer migrants from country \(j\) to country \(i\),
+on average.  This result is robust to the inclusion of all of our fixed effects.
+
+\end{document}

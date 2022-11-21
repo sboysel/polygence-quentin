@@ -1,0 +1,181 @@
+[1] "migration = f(foreign aid)"
+
+Call:
+   felm(formula = mig ~ faid, data = final) 
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+ -37562  -37201  -35824  -27884 8085258 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 37562.92     319.84  117.44   <2e-16 ***
+faid         -323.04      20.68  -15.62   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 235900 on 603468 degrees of freedom
+Multiple R-squared(full model): 0.0004043   Adjusted R-squared: 0.0004027 
+Multiple R-squared(proj model): 0.0004043   Adjusted R-squared: 0.0004027 
+F-statistic(full model):244.1 on 1 and 603468 DF, p-value: < 2.2e-16 
+F-statistic(proj model): 244.1 on 1 and 603468 DF, p-value: < 2.2e-16 
+
+
+[1] "migration = f(foreign aid | donor fixed effects)"
+
+Call:
+   felm(formula = mig ~ faid | i_cou_faid, data = final) 
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+ -47067  -38479  -34613  -23797 8087436 
+
+Coefficients:
+     Estimate Std. Error t value Pr(>|t|)    
+faid  -420.96      23.24  -18.11   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 235800 on 603440 degrees of freedom
+Multiple R-squared(full model): 0.001046   Adjusted R-squared: 0.0009983 
+Multiple R-squared(proj model): 0.0005434   Adjusted R-squared: 0.0004954 
+F-statistic(full model): 21.8 on 29 and 603440 DF, p-value: < 2.2e-16 
+F-statistic(proj model): 328.1 on 1 and 603440 DF, p-value: < 2.2e-16 
+
+
+[1] "migration = f(foreign aid | recipient fixed effects)"
+
+Call:
+   felm(formula = mig ~ faid | j_cou_mig, data = final) 
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+ -66809  -13167   -6797   -2808 6048651 
+
+Coefficients:
+     Estimate Std. Error t value Pr(>|t|)    
+faid  -169.05      10.36  -16.32   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 105900 on 482096 degrees of freedom
+  (121350 observations deleted due to missingness)
+Multiple R-squared(full model): 0.02732   Adjusted R-squared: 0.02727 
+Multiple R-squared(proj model): 0.0005522   Adjusted R-squared: 0.0005046 
+F-statistic(full model):588.6 on 23 and 482096 DF, p-value: < 2.2e-16 
+F-statistic(proj model): 266.4 on 1 and 482096 DF, p-value: < 2.2e-16 
+
+
+[1] "migration = f(foreign aid | donor + receiver fixed effects)"
+
+Call:
+   felm(formula = mig ~ faid | i_cou_faid + j_cou_mig, data = final) 
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+ -71976  -15500   -7380   -1706 6050556 
+
+Coefficients:
+     Estimate Std. Error t value Pr(>|t|)    
+faid  -221.91      11.68     -19   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 105800 on 482068 degrees of freedom
+  (121350 observations deleted due to missingness)
+Multiple R-squared(full model): 0.02854   Adjusted R-squared: 0.02844 
+Multiple R-squared(proj model): 0.0007484   Adjusted R-squared: 0.0006427 
+F-statistic(full model):277.7 on 51 and 482068 DF, p-value: < 2.2e-16 
+F-statistic(proj model):   361 on 1 and 482068 DF, p-value: < 2.2e-16 
+
+
+[1] "migration = f(foreign aid | sector fixed effects)"
+
+Call:
+   felm(formula = mig ~ faid | s, data = final) 
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+ -88432  -37572  -25993  -15203 8035524 
+
+Coefficients:
+     Estimate Std. Error t value Pr(>|t|)    
+faid   -158.5       21.2  -7.476 7.67e-14 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 235000 on 603458 degrees of freedom
+Multiple R-squared(full model): 0.007432   Adjusted R-squared: 0.007414 
+Multiple R-squared(proj model): 9.261e-05   Adjusted R-squared: 7.438e-05 
+F-statistic(full model):410.8 on 11 and 603458 DF, p-value: < 2.2e-16 
+F-statistic(proj model): 55.89 on 1 and 603458 DF, p-value: 7.669e-14 
+
+
+[1] "migration = f(foreign aid | education fixed effects)"
+
+Call:
+   felm(formula = mig ~ faid | e, data = final) 
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+ -47981  -39966  -32607  -22401 8074834 
+
+Coefficients:
+     Estimate Std. Error t value Pr(>|t|)    
+faid  -322.35      20.66   -15.6   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 235700 on 603466 degrees of freedom
+Multiple R-squared(full model): 0.001963   Adjusted R-squared: 0.001958 
+Multiple R-squared(proj model): 0.0004032   Adjusted R-squared: 0.0003983 
+F-statistic(full model):395.7 on 3 and 603466 DF, p-value: < 2.2e-16 
+F-statistic(proj model): 243.4 on 1 and 603466 DF, p-value: < 2.2e-16 
+
+
+[1] "migration = f(foreign aid | gender fixed effects)"
+
+Call:
+   felm(formula = mig ~ faid | g, data = final) 
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+ -43147  -41381  -31550  -25980 8079664 
+
+Coefficients:
+     Estimate Std. Error t value Pr(>|t|)    
+faid  -321.91      20.67  -15.57   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 235800 on 603467 degrees of freedom
+Multiple R-squared(full model): 0.000979   Adjusted R-squared: 0.0009756 
+Multiple R-squared(proj model): 0.0004017   Adjusted R-squared: 0.0003984 
+F-statistic(full model):295.7 on 2 and 603467 DF, p-value: < 2.2e-16 
+F-statistic(proj model): 242.5 on 1 and 603467 DF, p-value: < 2.2e-16 
+
+
+[1] "migration = f(foreign aid | donor, recipient, sector, education, gender fixed effects)"
+
+Call:
+   felm(formula = mig ~ faid | i_cou_faid + j_cou_mig + s + e +      g, data = final) 
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-100735  -23195   -7752    3874 6038375 
+
+Coefficients:
+     Estimate Std. Error t value Pr(>|t|)    
+faid  -134.40      12.15  -11.06   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 105200 on 482055 degrees of freedom
+  (121350 observations deleted due to missingness)
+Multiple R-squared(full model): 0.03874   Adjusted R-squared: 0.03861 
+Multiple R-squared(proj model): 0.0002536   Adjusted R-squared: 0.0001209 
+F-statistic(full model):303.6 on 64 and 482055 DF, p-value: < 2.2e-16 
+F-statistic(proj model): 122.3 on 1 and 482055 DF, p-value: < 2.2e-16 
+*** Standard errors may be too high due to more than 2 groups and exactDOF=FALSE
+
+
